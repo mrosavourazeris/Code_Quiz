@@ -3,7 +3,28 @@ var buttonSection = document.getElementById("parent")
 var questionHeader = document.querySelector("#h1")
 var questionBody = document.querySelector("#h5")
 
+
+
+//JavaScript related to the timer on the quiz START
+var timeID = document.getElementById("timer")
+
+var myCount = 5
+
+function myTimer (){
+    setInterval(function(){
+        myCount--
+        timeID.innerHTML = "Time: " + myCount + " seconds left"
+        if (myCount === 0) {
+            clearInterval(myCount)
+        }
+    }, 1000 )
+}
+
+//JavaScript related to the timer on the quiz END
+
 function allQ (){
+
+    buttonSection.className = "container-sm d-flex justify-content-center flex-column"
 
     var buttonOne = document.createElement("button")
     buttonOne.className = "btn btn-primary m-3"
@@ -19,9 +40,11 @@ function allQ (){
     buttonSection.appendChild(buttonThree)
     buttonSection.appendChild(buttonFour)
 
-    function firstQ (event){
+    myTimer()
 
-        buttonSection.className = "container-sm d-flex justify-content-center flex-column"
+    function firstQ (){
+
+        
 
         questionHeader.innerHTML = "Question 1"
         questionBody.innerHTML = "Commonly used data types DO NOT include:"
@@ -42,15 +65,10 @@ function allQ (){
         buttonFour.innerHTML = "4. Numbers"
 
         //answer is 3
-        
-        // if (event.target.Matches("button")){
-        //     secondQ()
-        // }
-        
 
 
-        parent.addEventListener("click", secondQ)
         
+        // secondQ()
         
     }
 
@@ -135,3 +153,4 @@ function startQuiz (event){
 
 //this event listener allows the function startQuiz to run once the start quiz button is clicked
 startBtn.addEventListener("click", startQuiz)
+//
