@@ -22,28 +22,29 @@ function myTimer (){
 
 //JavaScript related to the timer on the quiz END
 
-function allQ (){
+// function allQ (){
 
-    buttonSection.className = "container-sm d-flex justify-content-center flex-column"
-
-    var buttonOne = document.createElement("button")
-    buttonOne.className = "btn btn-primary m-3"
-    var buttonTwo = document.createElement("button")
-    buttonTwo.className = "btn btn-primary m-3"
-    var buttonThree = document.createElement("button")
-    buttonThree.className = "btn btn-primary m-3"
-    var buttonFour = document.createElement("button")
-    buttonFour.className = "btn btn-primary m-3"
-
-    buttonSection.appendChild(buttonOne)
-    buttonSection.appendChild(buttonTwo)
-    buttonSection.appendChild(buttonThree)
-    buttonSection.appendChild(buttonFour)
-
-    myTimer()
-
+    
+    
     function firstQ (){
+        
+        myTimer()
 
+        buttonSection.className = "container-sm d-flex justify-content-center flex-column"
+    
+        var buttonOne = document.createElement("button")
+        buttonOne.className = "btn btn-primary m-3"
+        var buttonTwo = document.createElement("button")
+        buttonTwo.className = "btn btn-primary m-3"
+        var buttonThree = document.createElement("button")
+        buttonThree.className = "btn btn-primary m-3"
+        var buttonFour = document.createElement("button")
+        buttonFour.className = "btn btn-primary m-3"
+    
+        buttonSection.appendChild(buttonOne)
+        buttonSection.appendChild(buttonTwo)
+        buttonSection.appendChild(buttonThree)
+        buttonSection.appendChild(buttonFour)
         
 
         questionHeader.innerHTML = "Question 1"
@@ -72,9 +73,25 @@ function allQ (){
         
     }
 
-    firstQ()
-    
+       
     function secondQ (){
+
+        var buttonOne = document.createElement("button")
+        buttonOne.className = "btn btn-primary m-3"
+        var buttonTwo = document.createElement("button")
+        buttonTwo.className = "btn btn-primary m-3"
+        var buttonThree = document.createElement("button")
+        buttonThree.className = "btn btn-primary m-3"
+        var buttonFour = document.createElement("button")
+        buttonFour.className = "btn btn-primary m-3"
+    
+        buttonSection.innerHTML = ""
+
+        buttonSection.appendChild(buttonOne)
+        buttonSection.appendChild(buttonTwo)
+        buttonSection.appendChild(buttonThree)
+        buttonSection.appendChild(buttonFour)
+
         questionHeader.innerHTML = "Question 2"
         questionBody.innerHTML = "The condition in an if / else statement is enclosed within:"
 
@@ -92,6 +109,23 @@ function allQ (){
     }
     
     function thirdQ (){
+
+        var buttonOne = document.createElement("button")
+        buttonOne.className = "btn btn-primary m-3"
+        var buttonTwo = document.createElement("button")
+        buttonTwo.className = "btn btn-primary m-3"
+        var buttonThree = document.createElement("button")
+        buttonThree.className = "btn btn-primary m-3"
+        var buttonFour = document.createElement("button")
+        buttonFour.className = "btn btn-primary m-3"
+
+        buttonSection.innerHTML = ""
+    
+        buttonSection.appendChild(buttonOne)
+        buttonSection.appendChild(buttonTwo)
+        buttonSection.appendChild(buttonThree)
+        buttonSection.appendChild(buttonFour)
+
         questionHeader.innerHTML = "Question 3"
         questionBody.innerHTML = "Arrays in JavaScript can be used to store:"
 
@@ -109,6 +143,23 @@ function allQ (){
     }
     
     function fourthQ (){
+
+        var buttonOne = document.createElement("button")
+        buttonOne.className = "btn btn-primary m-3"
+        var buttonTwo = document.createElement("button")
+        buttonTwo.className = "btn btn-primary m-3"
+        var buttonThree = document.createElement("button")
+        buttonThree.className = "btn btn-primary m-3"
+        var buttonFour = document.createElement("button")
+        buttonFour.className = "btn btn-primary m-3"
+
+        buttonSection.innerHTML = ""
+    
+        buttonSection.appendChild(buttonOne)
+        buttonSection.appendChild(buttonTwo)
+        buttonSection.appendChild(buttonThree)
+        buttonSection.appendChild(buttonFour)
+
         questionHeader.innerHTML = "Question 4"
         questionBody.innerHTML = "String values must be enclosed within ____ when being assigned to variables:"
 
@@ -126,6 +177,23 @@ function allQ (){
     }
     
     function fifthQ (){
+
+        var buttonOne = document.createElement("button")
+        buttonOne.className = "btn btn-primary m-3"
+        var buttonTwo = document.createElement("button")
+        buttonTwo.className = "btn btn-primary m-3"
+        var buttonThree = document.createElement("button")
+        buttonThree.className = "btn btn-primary m-3"
+        var buttonFour = document.createElement("button")
+        buttonFour.className = "btn btn-primary m-3"
+
+        buttonSection.innerHTML = ""
+    
+        buttonSection.appendChild(buttonOne)
+        buttonSection.appendChild(buttonTwo)
+        buttonSection.appendChild(buttonThree)
+        buttonSection.appendChild(buttonFour)
+
         questionHeader.innerHTML = "Question 5"
         questionBody.innerHTML = "A very useful tool used during development and debugging for printing content to the debugger is:"
 
@@ -140,17 +208,52 @@ function allQ (){
         //answer is 4
         
     }
-} // end of allQ function
+// } // end of allQ function
 
 
 //this function starts the function allQ
-function startQuiz (event){
-    event.preventDefault()
-    if (event.target.matches("button")){
-        allQ()
-    }
-}
+// function startQuiz (event){
+//     // event.preventDefault()
+//     if (event.target.matches("button")){
+//         allQ()
+//     }
+// }
 
 //this event listener allows the function startQuiz to run once the start quiz button is clicked
-startBtn.addEventListener("click", startQuiz)
-//
+// startBtn.addEventListener("click", startQuiz)
+
+document.addEventListener("click", e=>{
+
+    
+    console.log(e.target.innerHTML)
+
+    if(e.target.id === "startquizbtn"){
+        firstQ()
+    }
+
+    else if(e.target.innerHTML === "3. Alerts" ||e.target.innerHTML === "3. Parentheses" || e.target.innerHTML === "4. All of the Above" || e.target.innerHTML === "3. Quotes" || e.target.innerHTML === "4. Console Log" ){
+
+        console.log("Got The right answer")
+
+        if(e.target.innerHTML === "3. Alerts"){
+            secondQ()
+        }
+        else if(e.target.innerHTML === "3. Parentheses"){
+            thirdQ()
+        }
+        else if(e.target.innerHTML === "4. All of the Above"){
+            fourthQ()
+        }
+        else if(e.target.innerHTML === "3. Quotes"){
+            fifthQ()
+        }else if(e.target.innerHTML === "4. Console Log"){
+            console.log("Made it to the end!")
+        }
+        
+    }
+
+
+    else {
+        console.log("Got the wrong answer")
+    }
+})
