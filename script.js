@@ -3,6 +3,8 @@ var startBtn = document.getElementById("startquizbtn")
 var buttonSection = document.getElementById("parent")
 var questionHeader = document.querySelector("#h1")
 var questionBody = document.querySelector("#h5")
+var questionZ = document.getElementById("questionZone")
+var userInput = document.createElement("input")
 
 var userScore = 0
 
@@ -16,6 +18,7 @@ var startTime = 75
 var endTime = 0
 var penalty = 10
 
+//JavaScript related to the timer on the quiz END
 function myTimer (){
     thisTimer = setInterval(function(){
             startTime--
@@ -23,18 +26,25 @@ function myTimer (){
             if (startTime <= 0) {
                 clearInterval(thisTimer)
                 // timeID.innerHTML = "Time: 0 seconds left"
-                console.log(startTime)
+                alert("Your final score was: " + userScore)
+                gameOver()
             }
         }, 1000 )
     }
 
 
-//JavaScript related to the timer on the quiz END
-
-
-
+function gameOver (){
+    questionHeader.textContent = ("Enter your initials")
+    questionBody.textContent = ""
+    questionBody.appendChild(userInput)
+    buttonSection.innerHTML = ""
     
-    
+    var highScoreInput = userInput
+    console.log(highScoreInput)
+
+}
+
+
 function firstQ (){
     
     myTimer()
@@ -202,7 +212,7 @@ function fifthQ (){
 
     //answer is 4
 
-    console.log(userScore)
+    
 }
 
 document.addEventListener("click", e=>{
@@ -239,6 +249,8 @@ document.addEventListener("click", e=>{
         }else if(e.target.innerHTML === "4. Console Log"){
             alert("Got the right answer!")
             userScore++
+            gameOver()
+            clearInterval(thisTimer)
         }
         
     }
@@ -250,6 +262,6 @@ document.addEventListener("click", e=>{
              e.target.innerHTML === "1. Javascript" || e.target.innerHTML === "2. Terminal / Bash" || e.target.innerHTML === "3. For Loops") {
         alert("Got the right Wrong! Minus 10 seconds!")
         userScore--
-        startTime = startTime - penalty
+        startTime = startTime - penalty    
     }
 })
