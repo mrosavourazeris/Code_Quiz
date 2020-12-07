@@ -4,7 +4,6 @@ var buttonSection = document.getElementById("parent")
 var questionHeader = document.querySelector("#h1")
 var questionBody = document.querySelector("#h5")
 var questionZ = document.getElementById("questionZone")
-var userInput = document.createElement("input")
 
 var userScore = 0
 
@@ -14,7 +13,7 @@ var userScore = 0
 //JavaScript related to the timer on the quiz START
 var timeID = document.getElementById("timer")
 
-var startTime = 75
+var startTime = 5
 var endTime = 0
 var penalty = 10
 
@@ -32,15 +31,31 @@ function myTimer (){
         }, 1000 )
     }
 
-
+//will end game if the timer hits 0 or last question is answered 
 function gameOver (){
     questionHeader.textContent = ("Enter your initials")
     questionBody.textContent = ""
+    var userInput = document.createElement("input");
+    userInput.setAttribute("type", "text");
+    userInput.setAttribute("id", "initials");
+    userInput.textContent = "";
     questionBody.appendChild(userInput)
+
+
+    //add a width, class for style and center it 
+    var submitBtn = document.createElement("button");
+    submitBtn.className = "btn btn-success m-3"
+    // submitBtn.setAttribute("style", "width: 35%")
+    submitBtn.setAttribute("type", "submit");
+    submitBtn.setAttribute("id", "Submit");
+    submitBtn.textContent = "Submit";
+
+    buttonSection.className = "container-sm d-flex justify-content-center"
     buttonSection.innerHTML = ""
+    buttonSection.appendChild(submitBtn);
+
     
-    var highScoreInput = userInput
-    console.log(highScoreInput)
+    
 
 }
 
