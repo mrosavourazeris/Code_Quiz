@@ -13,8 +13,8 @@
 
     <nav>
         <h3 id="viewscores" class="float-left">
-            <a href="highscore.html">
-                View Highscores
+            <a href="index.html">
+                Return Home
             </a> 
         </h3>
 
@@ -25,20 +25,44 @@
 
     <div id="questionZone">
         <header>
-            <h1 id="h1">Coding Quiz Challenge</h1>
+            <h1 id="h1">Highscores</h1>
         </header>
 
-        <section class="container-sm d-flex justify-content-center" >
+        <section class="container-sm d-flex justify-content-center highscore" >
             <h5 id="h5">
-                Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score time by ten seconds!
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Handle</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                      </tr>
+                    </tbody>
+                  </table>
             </h5>
         </section>
 
         <section id="parent" class="container-sm d-flex justify-content-center" >
-
-            <button id="startquizbtn" type="button" class="btn btn-primary">
-                Start Quiz
-            </button>
+            
+            
 
         </section>
     </div>

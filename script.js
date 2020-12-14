@@ -42,7 +42,7 @@ function gameOver (){
     questionBody.appendChild(userInput)
 
 
-    //add a width, class for style and center it 
+    
     var submitBtn = document.createElement("button");
     submitBtn.className = "btn btn-success m-3"
     // submitBtn.setAttribute("style", "width: 35%")
@@ -54,7 +54,11 @@ function gameOver (){
     buttonSection.innerHTML = ""
     buttonSection.appendChild(submitBtn);
 
-    
+    submitBtn.addEventListener("click", function (){
+        var userInitials = userInput.value
+        if (userInitials === null)
+            console.log("No initials were entered, please enter your initials!")
+    })
     
 
 }
@@ -64,7 +68,7 @@ function firstQ (){
     
     myTimer()
 
-    buttonSection.className = "container-sm d-flex justify-content-center flex-column"
+    buttonSection.className = "container-sm d-flex justify-content-center "
 
     var buttonOne = document.createElement("button")
     buttonOne.className = "btn btn-primary m-3"

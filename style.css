@@ -22,3 +22,9 @@ h5{
     padding-top: 10px;
     padding-left: 20px;
 }
+
+.highscore {
+    border: solid;
+    margin-right: 250px;
+    margin-left: 250px;
+}
